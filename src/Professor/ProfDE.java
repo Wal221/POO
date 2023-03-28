@@ -16,4 +16,9 @@ public class ProfDE extends Profe{
     public void setSalarario(double salarario) {
         this.salarario = salarario;
     }
+
+    @Override
+    public Double getSalario() {
+        return null;
+    }
 }

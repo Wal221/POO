@@ -13,33 +13,45 @@ public class Usuario {
     private Emprestimos emprestimos ;
     private Books livros = new Books();
 
-  /*  public void setBooks(List<Books> books) {
-        this.books = books;
-    }
-
-   */
 
 
 
-    public Books getLivros() {
-        return livros;
-    }
-
-    public void setLivros(Books livros) {
-        this.livros = livros;
-    }
 
     public Usuario (){
 
     }
+    public Usuario(String name, int idade, int telefone, Emprestimos emprestimos, Books livros) {
+        this.name = name;
+        this.idade = idade;
+        this.telefone = telefone;
+        this.emprestimos = emprestimos;
+        this.livros = livros;
+    }
+
+
+
+    public Usuario(Emprestimos emprestimos ){
+        this.emprestimos =emprestimos;
+
+    }
+
 
     public Usuario(String name, int idade, String sexo, int telefone) {
+        super();
         this.name = name;
         this.idade = idade;
         this.sexo = sexo;
         this.telefone = telefone;
 
     }
+
+    public void setLivros(Books livros) {
+        this.livros = livros;
+    }
+    public Books getLivros() {
+        return livros;
+    }
+
 
     public String getName() {
         return name;
@@ -99,8 +111,8 @@ public class Usuario {
 
 
 
-  //  @Override
-   /* public String toString() {
+    @Override
+    public String toString() {
         return "Usuario" +
                 "name='" + name + '\'' +
                 ", idade=" + idade +
@@ -110,5 +122,4 @@ public class Usuario {
                 ;
     }
 
-    */
 }

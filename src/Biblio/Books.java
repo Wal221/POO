@@ -1,6 +1,10 @@
 package Biblio;
 
-public class Books {
+import Biblio.Obras.Fotografia;
+import Biblio.Obras.MidiaAudio;
+import Biblio.repository.Obrass;
+
+public class Books  implements Obrass {
     private String titulo;
     private String autores;
     private String area;
@@ -10,9 +14,11 @@ public class Books {
     private  int numeroDeFolhas;
     private boolean emprestimo = false;
 
-    public Books(){
+    public Books (){
 
     }
+
+
 
     public Books(String titulo, String autores, String area, String editora, int ano,
                  int edicao, int numeroDeFolhas) {
@@ -114,4 +120,25 @@ public class Books {
                 "numero de folhas: "+ numeroDeFolhas + "\n";
 
     }
+
+    @Override
+    public Fotografia getFotografia() {
+
+        Fotografia foto ;
+        String fotografia = "Vendo imagem";
+        foto = new Fotografia(fotografia);
+        return foto;
+
+    }
+
+    @Override
+    public MidiaAudio getMidiaAudio() {
+      MidiaAudio midiaAudio;
+      String ler = " Ouvindo livro "+ getTitulo();
+       midiaAudio= new MidiaAudio(ler);
+
+       return midiaAudio;
+    }
+
+
 }

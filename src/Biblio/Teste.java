@@ -7,19 +7,24 @@ import java.util.Scanner;
 
 public class Teste {
     public static void main(String[] args) {
-           Usuario user = new Usuario();
-           Date date = new Date();
-        
-           Emprestimos emprestimos = new Emprestimos(date);
+
+
+
+
+           //Date date = new Date();
+           Emprestimos emprestimos ;
+           Usuario user = new Usuario(emprestimos=new Emprestimos());
+
 
 
         System.out.println("-----EMPRESTIMO-----");
         user.getLivros().setTitulo("O AMOR");
-        System.out.println("Titulo: " + user.getLivros().getTitulo());
+        System.out.println("Titulo: " );
+        System.out.println();
         user.setName("Michele");
         System.out.println("Usuario: " + user.getName());
         user.setEmprestimos(emprestimos);
-        System.out.println("Data: " + user.getEmprestimos());
+        System.out.println("Data: " + user.getEmprestimos().getDataDoEmprestimo());
         user.getLivros().openBook();
         user.lerLivro();
         user.getLivros().closeBook();

@@ -4,7 +4,12 @@ public class teste {
     public static <ProfeDE> void main(String[] args) {
         Profe prof1 = new ProfDE("Joao", 1, 1123.56);
         Profe prof2 = new ProfeHorista("Jose", 3 ,14,12.5);
-        ProfeDE prof3 = (ProfeDE) new Profe("Maria", 2, 14);
+      //  ProfeDE prof3 = (ProfeDE) new Profe("Maria", 2, 14);
+
+    ProfeHorista profeee = new ProfeHorista("jose", 5,13,44);
+
+
+    profeee.getSalarioHora();
 
         Profe profSuper = null;
         Profe profSub;

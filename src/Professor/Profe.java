@@ -1,9 +1,20 @@
 package Professor;
 
-public class Profe {
+public abstract class Profe {
+
+    /**
+     * Classe
+
+
+
+
+     */
+
+
     private String name;
     private int matricula;
     private int cargaHoraria;
+
 
 
 
@@ -42,9 +53,9 @@ public class Profe {
     public void setCargaHoraria(int cargaHoraria){}
 
 
-    public Double getSalario(){
-        return null;
+    public abstract Double getSalario();
 
-    }
+
+
 
 }
