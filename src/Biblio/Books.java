@@ -2,10 +2,9 @@ package Biblio;
 
 import Biblio.Obras.Fotografia;
 import Biblio.Obras.MidiaAudio;
-import Biblio.repository.Obrass;
+import Biblio.Obras.Obrass;
 
-public class Books  implements Obrass {
-    private String titulo;
+public class Books extends Obrass {
     private String autores;
     private String area;
     private String editora;
@@ -44,13 +43,7 @@ public class Books  implements Obrass {
         this.emprestimo =emprestimo;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public String getAutores() {
         return autores;
@@ -99,46 +92,32 @@ public class Books  implements Obrass {
     public void setNumeroDeFolhas(int numeroDeFolhas) {
         this.numeroDeFolhas = numeroDeFolhas;
     }
-    public void openBook(){
-        System.out.println(" LIVRO ESTA ABERTO PARA LEITURA ");
 
-    }
     public void closeBook(){
         System.out.println("LIVRO ESTA FECHADO PARA LEITURA");
     }
 
+    @Override
+    public String acaoObras() {
+        return "LIVRO ABERTO PARA LEITURA";
+    }
+
+
 
     @Override
     public String toString() {
-        return "Books" +
-                "titulo: '" + titulo +"\n"+
-                "Autores: " + autores+ "\n"+
-                 "Area: "+ area + "\n"+
-                "editora: "+ editora + "\n"+
-                "ano: "+ ano + "\n"+
-                "edição: "+ edicao + "\n"+
-                "numero de folhas: "+ numeroDeFolhas + "\n";
+        StringBuilder livro = new StringBuilder();
+       livro.append("titulo: " + titulo + "\n");
+       livro.append("autor: " + autores + "\n");
+        livro.append("area: " + area + "\n");
+
+        return livro.toString();
 
     }
 
-    @Override
-    public Fotografia getFotografia() {
 
-        Fotografia foto ;
-        String fotografia = "Vendo imagem";
-        foto = new Fotografia(fotografia);
-        return foto;
 
-    }
 
-    @Override
-    public MidiaAudio getMidiaAudio() {
-      MidiaAudio midiaAudio;
-      String ler = " Ouvindo livro "+ getTitulo();
-       midiaAudio= new MidiaAudio(ler);
-
-       return midiaAudio;
-    }
 
 
 }
