@@ -107,9 +107,7 @@ public class Books extends Obrass {
     @Override
     public String toString() {
         StringBuilder livro = new StringBuilder();
-       livro.append("titulo: " + titulo + "\n");
-       livro.append("autor: " + autores + "\n");
-        livro.append("area: " + area + "\n");
+        livro.append("titulo: " + titulo + "\n");
 
         return livro.toString();
 

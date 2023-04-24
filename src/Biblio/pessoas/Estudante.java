@@ -31,7 +31,7 @@ public class Estudante extends Usuario {
 
     }
 
-
+/*
         @Override
         public String toString () {
 
@@ -42,16 +42,27 @@ public class Estudante extends Usuario {
 
             return estu.toString();
         }
+
+ */
     public void gravar(String caminho) {
         try {
             FileWriter writer = new FileWriter(caminho,true);
-            writer.write("Aluno: "+getNome() + "\n" + getBooks());
+            writer.write("Aluno: "+getNome() + "\n" + getBooks()+ "\n" + "Dataemprestimo: " +
+                    getEmprestimos().getDataDoEmprestimo() );
             writer.close();
             System.out.println("Dados gravados");
         } catch (IOException e) {
             e.printStackTrace();
 
         }
+    }
+
+    public String livrosAssociados(){
+        StringBuilder estu = new StringBuilder();
+        estu.append("nome: " + getNome() + "\n");
+        estu.append("Dia do emprestimo:" + getEmprestimos().getDataDoEmprestimo());
+
+        return estu.toString();
     }
 
     }
