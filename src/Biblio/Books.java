@@ -4,6 +4,10 @@ import Biblio.Obras.Fotografia;
 import Biblio.Obras.MidiaAudio;
 import Biblio.Obras.Obrass;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Books extends Obrass {
     private String autores;
     private String area;
@@ -11,7 +15,7 @@ public class Books extends Obrass {
     private int ano;
     private int edicao;
     private  int numeroDeFolhas;
-    private boolean emprestimo = false;
+    private boolean emprestimo = true;
 
     public Books (){
 
@@ -107,11 +111,34 @@ public class Books extends Obrass {
     @Override
     public String toString() {
         StringBuilder livro = new StringBuilder();
-        livro.append("titulo: " + titulo + "\n");
+        livro.append( titulo + "\n");
 
         return livro.toString();
 
     }
+
+    public void gravar(String caminho) {
+        try {
+            FileWriter writer = new FileWriter(caminho,true);
+            writer.write( titulo + "\n" );
+            writer.close();
+            System.out.println("Dados gravados");
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+     public void Livrosdisponiveis() throws IOException {
+         String livros = "";
+         int i =0 ;
+        while(livros!= null){
+            livros = ( (Files.readAllLines(Paths.get("src/Biblio/testar/livros")).get(i)));
+            System.out.println(livros);
+            i++;
+        }
+     }
+
 
 
 
