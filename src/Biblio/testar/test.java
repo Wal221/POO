@@ -76,7 +76,13 @@ public class test {
         System.out.println("Digite o nome do livro que deseja pegar ");
 
          String nomeLivro = ler.next();
-      for(int i = 0 ; i < 6; i++ ){
+
+         int a = livros.numberLinhas();
+        System.out.println(a);
+
+
+
+      for(int i = 0 ; i < a  ; i++ ){
           Books aux  = new Books();
           aux.setTitulo( (Files.readAllLines(Paths.get("src/Biblio/testar/livros")).get(i)));
 

@@ -122,7 +122,7 @@ public class Books extends Obrass {
             FileWriter writer = new FileWriter(caminho,true);
             writer.write( titulo + "\n" );
             writer.close();
-            System.out.println("Dados gravados");
+            System.out.println("livro cadastrado");
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -130,17 +130,33 @@ public class Books extends Obrass {
     }
 
      public void Livrosdisponiveis() throws IOException {
-         String livros = "";
-         int i =0 ;
-        while(livros!= null){
-            livros = ( (Files.readAllLines(Paths.get("src/Biblio/testar/livros")).get(i)));
-            System.out.println(livros);
-            i++;
+        try{
+            FileReader arq = new FileReader("src/Biblio/testar/livros");
+            BufferedReader lerArq = new BufferedReader(arq);
+
+            String linha = lerArq.readLine();
+            while (linha != null){
+                System.out.printf("%s\n", linha);
+
+                linha = lerArq.readLine();
+
+            }
+            arq.close();
+        }catch (IOException e){
+            System.out.println("Erro na abertura do arquivo");
+              e.getMessage();
+
         }
+         System.out.println();
      }
 
 
-
+    public int numberLinhas() throws IOException {
+        LineNumberReader lnr = new LineNumberReader(new FileReader("src/Biblio/testar/livros"));
+        lnr.skip(Long.MAX_VALUE);
+        int retorno = lnr.getLineNumber();
+        return retorno;
+    }
 
 
 
