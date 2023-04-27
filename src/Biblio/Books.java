@@ -130,7 +130,12 @@ public class Books extends Obrass {
 
         }
     }
-
+      /**
+       * @return esse metodo retorna os livros cadastrado na biblioteca em tempo real
+       * ou seja , se eu cadastra um livro no seguinte arquivo no mesmo estante em que um aluno queira pegalo
+       * ele ja estara disponivel
+       * usando o File e BufferReader para percorrer o seguinte arquivo.
+       */
      public void Livrosdisponiveis() throws IOException {
         try{
             FileReader arq = new FileReader("src/Biblio/testar/livros");
@@ -152,7 +157,12 @@ public class Books extends Obrass {
          System.out.println();
      }
 
-
+     /**
+      * @return  Esse metodo tem como função retorna o numero de linhas do arquivo
+      * ja que o mesmo precisa percorrer ele para pegar todos os livros inclusive os que foram cadastrado naquele momento
+      * com o retorno da quantidade de linha e posssivel sabe percorrer de forma correta
+      * ja que não sabemos o numero exato de linhas disponiveis
+      */
     public int numberLinhas() throws IOException {
         LineNumberReader lnr = new LineNumberReader(new FileReader("src/Biblio/testar/livros"));
         lnr.skip(Long.MAX_VALUE);
